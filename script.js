@@ -1,5 +1,6 @@
 $(() => {
     let x = 0
+    let children = []
     $('#add').click(function () {
         if ($('#input').val() !== "") {
             x++
@@ -28,7 +29,15 @@ $(() => {
     });
 
     $('#remove').click(function(){
-        $('#eleList').remove()
+        console.log($('#eleList').children().length);
+
+       if (x>=0){
+        const child1 = $('#eleList').children()[0]
+        $('#eleList').find(child1).remove()
+       console.log(document.getElementById('eleList').children);
+        x--
+       }
+          console.log(x);
     })
 
 
